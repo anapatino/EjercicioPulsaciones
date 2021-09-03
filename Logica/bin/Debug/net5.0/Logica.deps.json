@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Logica/1.0.0": {
+        "dependencies": {
+          "Datos": "1.0.0"
+        },
+        "runtime": {
+          "Logica.dll": {}
+        }
+      },
+      "Datos/1.0.0": {
+        "runtime": {
+          "Datos.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Logica/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Datos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
