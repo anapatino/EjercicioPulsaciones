@@ -6,14 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "Datos/1.0.0": {
-        "dependencies": {
-          "Entidad": "1.0.0"
-        },
-        "runtime": {
-          "Datos.dll": {}
-        }
-      },
       "Entidad/1.0.0": {
         "runtime": {
           "Entidad.dll": {}
@@ -22,11 +14,6 @@
     }
   },
   "libraries": {
-    "Datos/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Entidad/1.0.0": {
       "type": "project",
       "serviceable": false,

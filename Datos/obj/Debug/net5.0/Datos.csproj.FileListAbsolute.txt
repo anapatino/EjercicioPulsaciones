@@ -10,3 +10,6 @@ C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones
 C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\Datos\obj\Debug\net5.0\Datos.dll
 C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\Datos\obj\Debug\net5.0\ref\Datos.dll
 C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\Datos\obj\Debug\net5.0\Datos.pdb
+C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\Datos\bin\Debug\net5.0\Entidad.dll
+C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\Datos\bin\Debug\net5.0\Entidad.pdb
+C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\Datos\obj\Debug\net5.0\Datos.csproj.CopyComplete

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "Presentacion/1.0.0": {
         "dependencies": {
+          "Entidad": "1.0.0",
           "Logica": "1.0.0"
         },
         "runtime": {
@@ -15,13 +16,22 @@
         }
       },
       "Datos/1.0.0": {
+        "dependencies": {
+          "Entidad": "1.0.0"
+        },
         "runtime": {
           "Datos.dll": {}
         }
       },
+      "Entidad/1.0.0": {
+        "runtime": {
+          "Entidad.dll": {}
+        }
+      },
       "Logica/1.0.0": {
         "dependencies": {
-          "Datos": "1.0.0"
+          "Datos": "1.0.0",
+          "Entidad": "1.0.0"
         },
         "runtime": {
           "Logica.dll": {}
@@ -36,6 +46,11 @@
       "sha512": ""
     },
     "Datos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Entidad/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

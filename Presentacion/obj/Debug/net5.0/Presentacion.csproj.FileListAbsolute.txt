@@ -19,3 +19,5 @@ C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones
 C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\Presentacion\obj\Debug\net5.0\ref\Presentacion.dll
 C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\Presentacion\obj\Debug\net5.0\Presentacion.pdb
 C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\Presentacion\obj\Debug\net5.0\Presentacion.genruntimeconfig.cache
+C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\Presentacion\bin\Debug\net5.0\Entidad.dll
+C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\Presentacion\bin\Debug\net5.0\Entidad.pdb

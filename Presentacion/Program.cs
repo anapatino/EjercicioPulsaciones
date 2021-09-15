@@ -1,5 +1,6 @@
 ﻿using System;
 using Logica;
+using Entidad;
 
 namespace Presentacion
 {
@@ -8,20 +9,40 @@ namespace Presentacion
         static void Main(string[] args)
         {
             Console.WriteLine("Ejercicio Púlsaciones(Creacion de capas)");
-            string nombre, identificacion,sexo;
+            string nombre, identificacion, sexo;
             int edad;
-          
-            Console.WriteLine("Digite su Identificacion:");
+
+            Console.Write("Digite su Identificacion:");
             identificacion = Console.ReadLine();
-            Console.WriteLine("Digite su Nombre:");
+            Console.Write("Digite su Nombre:");
             nombre = Console.ReadLine();
-            Console.WriteLine("Digite su Edad:");
+            Console.Write("Digite su Edad:");
             edad = int.Parse(Console.ReadLine());
-            Console.WriteLine("Digite su Sexo:");
+            Console.Write("Digite su Sexo:");
             sexo = Console.ReadLine();
-            PersonaService control = new PersonaService();
-           
-            //Console.WriteLine($"Su Pulsacion es : {control.persona.Pulsacion}");
+
+            Persona persona = new Persona(nombre, identificacion, sexo, edad);
+            persona.CalcularPulsacion();
+            
+
+            PersonaService personaService = new PersonaService();
+            string mensaje=personaService.Guarda(persona);
+            Console.WriteLine(mensaje);
+            Console.WriteLine($"Se calculo la pulsacion de la persona {persona.Pulsacion}");
+
+            var respuesta = personaService.Consultar();
+            if (respuesta.Error)
+            {
+                Console.WriteLine(respuesta.Mensaje);
+            }
+            else
+            {
+                foreach (var item in respuesta.Personas)
+                {
+                   Console.WriteLine($"{item.Nombre};{item.Identificacion};{item.Sexo};{item.Edad};{item.Pulsacion};");
+                }
+            }
+            
             Console.ReadKey();
         }
     }
