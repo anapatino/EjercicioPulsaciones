@@ -41,6 +41,8 @@ namespace PresentacionGUI
             this.txtPulsaciones = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.lbDescripcion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LbIdentificacion
@@ -87,6 +89,10 @@ namespace PresentacionGUI
             // cmbSexo
             // 
             this.cmbSexo.FormattingEnabled = true;
+            this.cmbSexo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cmbSexo.Items.AddRange(new object[] {
+            "Femenino",
+            "Masculino"});
             this.cmbSexo.Location = new System.Drawing.Point(160, 134);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(196, 23);
@@ -116,6 +122,7 @@ namespace PresentacionGUI
             this.lbPulsaciones.Size = new System.Drawing.Size(69, 15);
             this.lbPulsaciones.TabIndex = 8;
             this.lbPulsaciones.Text = "Pulsaciones";
+            this.lbPulsaciones.Visible = false;
             // 
             // txtPulsaciones
             // 
@@ -123,10 +130,11 @@ namespace PresentacionGUI
             this.txtPulsaciones.Name = "txtPulsaciones";
             this.txtPulsaciones.Size = new System.Drawing.Size(196, 23);
             this.txtPulsaciones.TabIndex = 9;
+            this.txtPulsaciones.Visible = false;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(142, 268);
+            this.btnGuardar.Location = new System.Drawing.Point(77, 268);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 10;
@@ -136,18 +144,40 @@ namespace PresentacionGUI
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(240, 268);
+            this.btnCancelar.Location = new System.Drawing.Point(301, 268);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Location = new System.Drawing.Point(187, 268);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.TabIndex = 12;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
+            // lbDescripcion
+            // 
+            this.lbDescripcion.AutoSize = true;
+            this.lbDescripcion.Location = new System.Drawing.Point(150, 23);
+            this.lbDescripcion.Name = "lbDescripcion";
+            this.lbDescripcion.Size = new System.Drawing.Size(91, 15);
+            this.lbDescripcion.TabIndex = 13;
+            this.lbDescripcion.Text = "Digite sus Datos";
             // 
             // FrmGestionPersonacs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(421, 340);
+            this.Controls.Add(this.lbDescripcion);
+            this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtPulsaciones);
@@ -181,5 +211,7 @@ namespace PresentacionGUI
         private System.Windows.Forms.TextBox txtPulsaciones;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Label lbDescripcion;
     }
 }

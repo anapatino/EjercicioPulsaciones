@@ -52,32 +52,43 @@ namespace Datos
                 }
             }
         }
-        public void Eliminar(string id)
+        public Persona Eliminar(string id)
         {
-            List<Persona> personas =Consultar();
-            File.Delete(ruta);
-
-            foreach (var item in personas)
+            bool resultado = File.Exists(ruta);
+            if (resultado == true)
             {
-                if (item.Identificacion.Equals(id))
+                List<Persona> personas = Consultar();
+                File.Delete(ruta);
+                foreach (var item in personas)
                 {
-                    Guardar(item);
+                    if (item.Identificacion.Equals(id))
+                    {
+                       return item; 
+                    }
+                    else
+                    {
+                        Guardar(item);
+                    }
                 }
-            }
+            } 
+            return null;
         }
 
         public Persona Buscar(string identificacion)
         {
-            List<Persona> personas = Consultar();
-            foreach (var item in personas)
+            bool resultado = File.Exists(ruta);
+            if (resultado==true)
             {
-                if (item.Identificacion.Equals(identificacion))
+                List<Persona> personas = Consultar();
+                foreach (var item in personas)
                 {
-                    return item;
+                    if (item.Identificacion.Equals(identificacion))
+                    {
+                        return item;
+                    }
                 }
             }
             return null;
         }
-
     }
 }

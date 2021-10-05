@@ -1,1 +1,3 @@
-laura;145;F;18;20;
+lucas;222;Masculino;19;19;
+ana;111;Femenino;17;20;
+asss;888;Femenino;78;14;

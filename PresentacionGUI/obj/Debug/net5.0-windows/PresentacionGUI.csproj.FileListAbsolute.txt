@@ -25,3 +25,7 @@ C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones
 C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\PresentacionGUI\bin\Debug\net5.0-windows\Logica.pdb
 C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\PresentacionGUI\bin\Debug\net5.0-windows\Datos.pdb
 C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\PresentacionGUI\obj\Debug\net5.0-windows\PresentacionGUI.csproj.CopyComplete
+C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\PresentacionGUI\obj\Debug\net5.0-windows\PresentacionGUI.FrmBuscarPersona.resources
+C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\PresentacionGUI\obj\Debug\net5.0-windows\PresentacionGUI.FrmConsultarPersona.resources
+C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\PresentacionGUI\obj\Debug\net5.0-windows\PresentacionGUI.FrmEliminarPersona.resources
+C:\Users\sofia\Documents\CUARTO SEMESTRE\POO III\Primer Corte\EjemploPulsaciones\PresentacionGUI\obj\Debug\net5.0-windows\PresentacionGUI.FrmModificarPersona.resources

@@ -27,5 +27,25 @@ namespace PresentacionGUI
         {
             Close();
         }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmEliminarPersona().Show(); ;
+        }
+
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmConsultarPersona().Show();
+        }
+
+        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmBuscarPersona().Show(); ;
+        }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmModificarPersona().Show(); ;
+        }
     }
 }

@@ -23,11 +23,11 @@ namespace Entidad
         public decimal Pulsacion { get; set; }
         public void CalcularPulsacion()
         {
-            if (Sexo.ToUpper().Equals("M"))
+            if (Sexo.ToUpper().Equals("MASCULINO"))
             {
                Pulsacion = (210 - Edad) / 10;
             }
-            else if (Sexo.ToUpper().Equals("F"))
+            else if (Sexo.ToUpper().Equals("FEMENINO"))
             {
                 Pulsacion = (220 - Edad) / 10;
             }

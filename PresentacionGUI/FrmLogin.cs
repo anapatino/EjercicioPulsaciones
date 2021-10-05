@@ -22,5 +22,10 @@ namespace PresentacionGUI
             new FrmPrincipal().Show();
             Hide();
         }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
     }
 }
