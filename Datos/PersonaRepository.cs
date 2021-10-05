@@ -29,10 +29,8 @@ namespace Datos
                     Sexo = dato[2],
                     Edad = int.Parse(dato[3]),
                     Pulsacion = decimal.Parse(dato[4])
-
                 };
-
-                personas.Add(persona);
+               personas.Add(persona);
             }
             lector.Close();
             return personas;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    class PersonaConsultaResponse
+    public class PersonaConsultaResponse
     {
         public List<Persona> Personas { get; set; }
         public string Mensaje { get; set; }
