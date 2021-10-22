@@ -21,11 +21,16 @@ namespace PresentacionGUI
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            MapearDatos();
+        }
+        public void MapearDatos()
+        { 
             Persona persona = new Persona();
             persona.Identificacion = txtIdentificacion.Text;
             persona.Nombre = txtNombre.Text;
-            persona.Edad =int.Parse( txtEdad.Text);
+            persona.Edad = int.Parse(txtEdad.Text);
             persona.Sexo = cmbSexo.Text;
+            persona.FechaNacimiento=dateTimePicker1.Value;
             persona.CalcularPulsacion();
             ActivarComponente();
             txtPulsaciones.Text = persona.Pulsacion.ToString();
@@ -39,7 +44,7 @@ namespace PresentacionGUI
             txtIdentificacion.Text="";
             txtNombre.Text = "";
             txtEdad.Text = "";
-            cmbSexo.Text = "";
+            cmbSexo.Text = null;
             txtPulsaciones.Text = "";
             lbPulsaciones.Visible = false;
             txtPulsaciones.Visible =false;

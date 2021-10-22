@@ -6,8 +6,6 @@ namespace Logica
 {
     public class PersonaService
     {
-
-
         readonly  PersonaRepository personaRepository;
         public PersonaService()
         {
@@ -28,7 +26,6 @@ namespace Logica
             catch (Exception e)
             {
                 return "Error al Guardar :"+e.Message;
-
             }
         }
         public PersonaConsultaResponse Consultar()
@@ -61,7 +58,6 @@ namespace Logica
         }
         public (string mensaje,Persona persona) Buscar(string identificacion)
         {
-       
             try
             {     
                 var persona = personaRepository.Buscar(identificacion);
@@ -75,7 +71,6 @@ namespace Logica
             {
                 return ($"Error inesperado al Buscar: {e.Message}",null);
             }
-           
         }
        
         public string Modificiar(string identificacion, Persona personaNew)
@@ -95,8 +90,43 @@ namespace Logica
             }
             catch (Exception e)
             {
-
                 return $"Error inesperado al Modificar: {e.Message}";
+            }
+        }
+
+        public PersonaConsultaResponse ConsultarPorSexo(string sexo)
+        {
+            try
+            {
+                return new PersonaConsultaResponse(personaRepository.FiltrarPorSexoConsulta(sexo));
+            }
+            catch (Exception e)
+            {
+                return new PersonaConsultaResponse("Se presento el siguiente: "+e.Message);
+            }
+        }
+
+        public PersonaConsultaResponse ConsultarPorPalabra(string palabra)
+        {
+            try
+            {
+                return new PersonaConsultaResponse(personaRepository.FiltrarPorPalabraConsulta(palabra));
+            }
+            catch (Exception e)
+            {
+                return new PersonaConsultaResponse("Se presento el siguiente: " + e.Message);
+            }
+        }
+
+        public PersonaConsultaResponse ConsultarPorAnio(int year)
+        {
+            try
+            {
+                return new PersonaConsultaResponse(personaRepository.FiltrarPorAnio(year));
+            }
+            catch (Exception e)
+            {
+                return new PersonaConsultaResponse("Se presento el siguiente: " + e.Message);
             }
         }
     }

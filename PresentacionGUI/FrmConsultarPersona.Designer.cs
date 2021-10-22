@@ -30,14 +30,15 @@ namespace PresentacionGUI
         private void InitializeComponent()
         {
             this.dgvTabla = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEdad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPulsacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnVisualizar = new System.Windows.Forms.Button();
+            this.cnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,22 +52,14 @@ namespace PresentacionGUI
             this.dgvNombre,
             this.dgvEdad,
             this.dgvSexo,
-            this.dgvPulsacion});
-            this.dgvTabla.Location = new System.Drawing.Point(40, 86);
+            this.dgvPulsacion,
+            this.cnFecha});
+            this.dgvTabla.Location = new System.Drawing.Point(39, 83);
             this.dgvTabla.Name = "dgvTabla";
             this.dgvTabla.ReadOnly = true;
             this.dgvTabla.RowTemplate.Height = 25;
-            this.dgvTabla.Size = new System.Drawing.Size(538, 188);
+            this.dgvTabla.Size = new System.Drawing.Size(622, 188);
             this.dgvTabla.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(239, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "REGISTROS INGRESADOS";
             // 
             // dgvIdentificacion
             // 
@@ -98,6 +91,15 @@ namespace PresentacionGUI
             this.dgvPulsacion.Name = "dgvPulsacion";
             this.dgvPulsacion.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(239, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "REGISTROS INGRESADOS";
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(445, 312);
@@ -118,11 +120,17 @@ namespace PresentacionGUI
             this.btnVisualizar.UseVisualStyleBackColor = true;
             this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
+            // cnFecha
+            // 
+            this.cnFecha.HeaderText = "Fecha";
+            this.cnFecha.Name = "cnFecha";
+            this.cnFecha.ReadOnly = true;
+            // 
             // FrmConsultarPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 375);
+            this.ClientSize = new System.Drawing.Size(685, 375);
             this.Controls.Add(this.btnVisualizar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label1);
@@ -146,5 +154,6 @@ namespace PresentacionGUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnVisualizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cnFecha;
     }
 }

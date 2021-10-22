@@ -27,7 +27,11 @@ namespace PresentacionGUI
 
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
-            
+            VisualizarTabla();
+           
+        }
+        public void VisualizarTabla()
+        {
             var respuesta = personaService.Consultar();
             if (respuesta.Error)
             {
@@ -37,7 +41,7 @@ namespace PresentacionGUI
             {
                 foreach (var item in respuesta.Personas)
                 {
-                    dgvTabla.Rows.Add(item.Identificacion,item.Nombre,item.Edad,item.Sexo,item.Pulsacion);
+                    dgvTabla.Rows.Add(item.Identificacion, item.Nombre, item.Edad, item.Sexo, item.Pulsacion,item.FechaNacimiento);
                 }
             }
         }

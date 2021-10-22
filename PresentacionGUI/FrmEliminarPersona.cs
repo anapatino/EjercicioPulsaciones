@@ -21,10 +21,14 @@ namespace PresentacionGUI
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            Visualizar();
+        }
+        public void Visualizar()
+        {
             Persona persona = new Persona();
-            string identificacion= txtIdentificacion.Text;
+            string identificacion = txtIdentificacion.Text;
             PersonaService personaService = new PersonaService();
-            var(mensaje,personaEliminada) = personaService.Eliminar(identificacion);
+            var (mensaje, personaEliminada) = personaService.Eliminar(identificacion);
             if (mensaje.Equals($"Se Eliminó el registro de la persona con identificacion {identificacion}"))
             {
                 ActivarTabla(personaEliminada);

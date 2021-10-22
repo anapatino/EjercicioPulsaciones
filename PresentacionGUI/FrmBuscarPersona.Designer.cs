@@ -30,9 +30,8 @@ namespace PresentacionGUI
         private void InitializeComponent()
         {
             this.lbTitulo = new System.Windows.Forms.Label();
-            this.lbDescripcion = new System.Windows.Forms.Label();
             this.lbIdentificacion = new System.Windows.Forms.Label();
-            this.txtIdentificacion = new System.Windows.Forms.TextBox();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -42,46 +41,40 @@ namespace PresentacionGUI
             this.dgvEdad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPulsacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbItem = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTitulo
             // 
             this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Location = new System.Drawing.Point(217, 43);
+            this.lbTitulo.Location = new System.Drawing.Point(254, 24);
             this.lbTitulo.Name = "lbTitulo";
             this.lbTitulo.Size = new System.Drawing.Size(206, 15);
             this.lbTitulo.TabIndex = 0;
             this.lbTitulo.Text = "BUSCAR REGISTRO DE UNA PERSONA";
             // 
-            // lbDescripcion
-            // 
-            this.lbDescripcion.AutoSize = true;
-            this.lbDescripcion.Location = new System.Drawing.Point(136, 89);
-            this.lbDescripcion.Name = "lbDescripcion";
-            this.lbDescripcion.Size = new System.Drawing.Size(219, 15);
-            this.lbDescripcion.TabIndex = 1;
-            this.lbDescripcion.Text = "Digite la Identificacion que desea Buscar";
-            // 
             // lbIdentificacion
             // 
             this.lbIdentificacion.AutoSize = true;
-            this.lbIdentificacion.Location = new System.Drawing.Point(136, 133);
+            this.lbIdentificacion.Location = new System.Drawing.Point(107, 72);
             this.lbIdentificacion.Name = "lbIdentificacion";
-            this.lbIdentificacion.Size = new System.Drawing.Size(79, 15);
+            this.lbIdentificacion.Size = new System.Drawing.Size(37, 15);
             this.lbIdentificacion.TabIndex = 2;
-            this.lbIdentificacion.Text = "Identificacion";
+            this.lbIdentificacion.Text = "Filtrar";
             // 
-            // txtIdentificacion
+            // txtBusqueda
             // 
-            this.txtIdentificacion.Location = new System.Drawing.Point(221, 130);
-            this.txtIdentificacion.Name = "txtIdentificacion";
-            this.txtIdentificacion.Size = new System.Drawing.Size(221, 23);
-            this.txtIdentificacion.TabIndex = 3;
+            this.txtBusqueda.Location = new System.Drawing.Point(283, 69);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(221, 23);
+            this.txtBusqueda.TabIndex = 3;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(490, 130);
+            this.btnBuscar.Location = new System.Drawing.Point(524, 69);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 4;
@@ -91,7 +84,7 @@ namespace PresentacionGUI
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(239, 287);
+            this.btnLimpiar.Location = new System.Drawing.Point(254, 325);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 5;
@@ -101,7 +94,7 @@ namespace PresentacionGUI
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(360, 287);
+            this.btnCancelar.Location = new System.Drawing.Point(375, 325);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 6;
@@ -119,12 +112,13 @@ namespace PresentacionGUI
             this.dgvNombre,
             this.dgvEdad,
             this.dgvSexo,
-            this.dgvPulsacion});
-            this.dgvTabla.Location = new System.Drawing.Point(79, 188);
+            this.dgvPulsacion,
+            this.cnFecha});
+            this.dgvTabla.Location = new System.Drawing.Point(31, 129);
             this.dgvTabla.Name = "dgvTabla";
             this.dgvTabla.ReadOnly = true;
             this.dgvTabla.RowTemplate.Height = 25;
-            this.dgvTabla.Size = new System.Drawing.Size(543, 67);
+            this.dgvTabla.Size = new System.Drawing.Size(631, 175);
             this.dgvTabla.TabIndex = 7;
             this.dgvTabla.Visible = false;
             // 
@@ -158,18 +152,38 @@ namespace PresentacionGUI
             this.dgvPulsacion.Name = "dgvPulsacion";
             this.dgvPulsacion.ReadOnly = true;
             // 
+            // cnFecha
+            // 
+            this.cnFecha.HeaderText = "Fecha";
+            this.cnFecha.Name = "cnFecha";
+            this.cnFecha.ReadOnly = true;
+            // 
+            // cbItem
+            // 
+            this.cbItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbItem.FormattingEnabled = true;
+            this.cbItem.Items.AddRange(new object[] {
+            "Sexo",
+            "Identificacion",
+            "Anio",
+            "Palabra"});
+            this.cbItem.Location = new System.Drawing.Point(150, 69);
+            this.cbItem.Name = "cbItem";
+            this.cbItem.Size = new System.Drawing.Size(117, 23);
+            this.cbItem.TabIndex = 8;
+            // 
             // FrmBuscarPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 404);
+            this.ClientSize = new System.Drawing.Size(702, 404);
+            this.Controls.Add(this.cbItem);
             this.Controls.Add(this.dgvTabla);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtIdentificacion);
+            this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.lbIdentificacion);
-            this.Controls.Add(this.lbDescripcion);
             this.Controls.Add(this.lbTitulo);
             this.Name = "FrmBuscarPersona";
             this.Text = "Buscar Persona";
@@ -182,9 +196,8 @@ namespace PresentacionGUI
         #endregion
 
         private System.Windows.Forms.Label lbTitulo;
-        private System.Windows.Forms.Label lbDescripcion;
         private System.Windows.Forms.Label lbIdentificacion;
-        private System.Windows.Forms.TextBox txtIdentificacion;
+        private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnCancelar;
@@ -194,5 +207,7 @@ namespace PresentacionGUI
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvEdad;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPulsacion;
+        private System.Windows.Forms.ComboBox cbItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cnFecha;
     }
 }

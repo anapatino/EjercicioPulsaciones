@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Entidad;
 using System.IO;
+using System.Linq;
 
 namespace Datos
 {
@@ -12,7 +13,7 @@ namespace Datos
         public void Guardar(Persona persona)
         {
             using StreamWriter escritor = new StreamWriter(ruta, true);
-                escritor.WriteLine($"{persona.Nombre};{persona.Identificacion};{persona.Sexo};{persona.Edad};{persona.Pulsacion};");
+                escritor.WriteLine($"{persona.Nombre};{persona.Identificacion};{persona.Sexo};{persona.Edad};{persona.Pulsacion};{persona.FechaNacimiento}");
         }
         public List <Persona> Consultar()
         {
@@ -28,7 +29,8 @@ namespace Datos
                     Identificacion = dato[1],
                     Sexo = dato[2],
                     Edad = int.Parse(dato[3]),
-                    Pulsacion = decimal.Parse(dato[4])
+                    Pulsacion = decimal.Parse(dato[4]),
+                    FechaNacimiento = DateTime.Parse(dato[5])
                 };
                personas.Add(persona);
             }
@@ -73,7 +75,6 @@ namespace Datos
             } 
             return null;
         }
-
         public Persona Buscar(string identificacion)
         {
             bool resultado = File.Exists(ruta);
@@ -90,5 +91,57 @@ namespace Datos
             }
             return null;
         }
+        public List<Persona> FiltrarPorSexoVersionLarga(string sexo)
+        {
+            List<Persona> personasFiltrada = new List<Persona>();
+            foreach (var item in Consultar())
+            {
+                if (item.Sexo.Equals(sexo))
+                {
+                    personasFiltrada.Add(item);
+                }
+            }
+            return personasFiltrada;
+        }
+        public List<Persona>  FiltrarPorSexoConsulta(string sexo)
+        {
+            return  (from p in Consultar()
+                    where p.Sexo.Equals(sexo) orderby p.Nombre ascending
+                    select p).ToList();
+        }
+
+        public List<Persona> FiltrarPorSexoMetodo(string sexo)
+        {
+            return Consultar().Where(p => p.Sexo.Equals(sexo)).ToList();
+        }
+
+        public int ContarPorSexorMetodo(string sexo)
+        {
+            return Consultar().Where(p => p.Sexo.Equals(sexo)).Count();
+            //return Consultar().Count(p => p.Sexo.Equals(sexo));
+        }
+
+        public double PromediarPorEdadMetodo()
+        {
+            return Consultar().Average(p => p.Edad);
+        }
+
+        public decimal SumarPorPulsacionesMetodo()
+        {
+            return Consultar().Sum(p => p.Pulsacion);
+        }
+
+        public List<Persona> FiltrarPorAnio(int year)
+        {
+            return Consultar().Where(p => p.FechaNacimiento.Year == year).ToList();
+        }
+
+        public List<Persona> FiltrarPorPalabraConsulta(string palabra)
+        {
+            return (from p in Consultar()
+                    where p.Nombre.ToLower().Contains(palabra.ToLower()) 
+                    select p).ToList();
+        }
+
     }
 }

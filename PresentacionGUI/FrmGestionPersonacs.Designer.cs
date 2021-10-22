@@ -43,6 +43,7 @@ namespace PresentacionGUI
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.lbDescripcion = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // LbIdentificacion
@@ -88,6 +89,7 @@ namespace PresentacionGUI
             // 
             // cmbSexo
             // 
+            this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSexo.FormattingEnabled = true;
             this.cmbSexo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cmbSexo.Items.AddRange(new object[] {
@@ -126,6 +128,7 @@ namespace PresentacionGUI
             // 
             // txtPulsaciones
             // 
+            this.txtPulsaciones.Enabled = false;
             this.txtPulsaciones.Location = new System.Drawing.Point(160, 208);
             this.txtPulsaciones.Name = "txtPulsaciones";
             this.txtPulsaciones.Size = new System.Drawing.Size(196, 23);
@@ -171,11 +174,19 @@ namespace PresentacionGUI
             this.lbDescripcion.TabIndex = 13;
             this.lbDescripcion.Text = "Digite sus Datos";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(402, 56);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(233, 23);
+            this.dateTimePicker1.TabIndex = 14;
+            // 
             // FrmGestionPersonacs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(421, 340);
+            this.ClientSize = new System.Drawing.Size(664, 388);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lbDescripcion);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnCancelar);
@@ -213,5 +224,6 @@ namespace PresentacionGUI
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Label lbDescripcion;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
