@@ -107,20 +107,5 @@ namespace Presentacion
             Console.WriteLine($"Pulsación Estimada por 10 Seg de Ejercicio: {persona.Pulsacion}");
             return persona;
         }
-
-        private static void CreandoColleciones()
-        {
-            Persona persona = new Persona();
-            List<Persona> personasList = new List<Persona>();
-            personasList.Add(persona);
-            Persona persona2 = new Persona();
-            List<Persona> personasList2 = new List<Persona>();
-            personasList2.Add(persona2);
-            ICollection<Persona> personasCollection = personasList;
-            personasCollection = personasList2;
-            personasCollection.Add(persona2);
-        }
-
-
     }
 }
