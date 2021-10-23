@@ -15,6 +15,7 @@ namespace Datos
             using StreamWriter escritor = new StreamWriter(ruta, true);
                 escritor.WriteLine($"{persona.Nombre};{persona.Identificacion};{persona.Sexo};{persona.Edad};{persona.Pulsacion};{persona.FechaNacimiento}");
         }
+
         public List <Persona> Consultar()
         {
             List<Persona> personas = new ();
@@ -37,6 +38,7 @@ namespace Datos
             lector.Close();
             return personas;
         }
+
         public void Modificar(string id,Persona personaNew)
         {
             List<Persona> personas = Consultar();
@@ -54,6 +56,7 @@ namespace Datos
                 }
             }
         }
+
         public Persona Eliminar(string id)
         {
             bool resultado = File.Exists(ruta);
@@ -75,6 +78,7 @@ namespace Datos
             } 
             return null;
         }
+
         public Persona Buscar(string identificacion)
         {
             bool resultado = File.Exists(ruta);
@@ -91,6 +95,7 @@ namespace Datos
             }
             return null;
         }
+
         public List<Persona> FiltrarPorSexoVersionLarga(string sexo)
         {
             List<Persona> personasFiltrada = new List<Persona>();
@@ -103,7 +108,8 @@ namespace Datos
             }
             return personasFiltrada;
         }
-        public List<Persona>  FiltrarPorSexoConsulta(string sexo)
+
+        public List<Persona> FiltrarPorSexoConsulta(string sexo)
         {
             return  (from p in Consultar()
                     where p.Sexo.Equals(sexo) orderby p.Nombre ascending
@@ -117,8 +123,9 @@ namespace Datos
 
         public int ContarPorSexorMetodo(string sexo)
         {
-            return Consultar().Where(p => p.Sexo.Equals(sexo)).Count();
-            //return Consultar().Count(p => p.Sexo.Equals(sexo));
+            return Consultar().Count(p => p.Sexo.Equals(sexo));
+            // Otra forma
+            // return Consultar().Where(p => p.Sexo.Equals(sexo)).Count();
         }
 
         public double PromediarPorEdadMetodo()
